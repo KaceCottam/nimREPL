@@ -9,14 +9,14 @@ buffer, while the other half holds the message and output log.
 |34 >for i in range[0..3]:                                                    |
 |35 >  echo "hello"                                                           |
 |36 >let b = 3                                                                |
-|37 >proc doSomethingWith[U](b: int, fn: int->U): U =                         |
-|38 >  if b == high(T):                                                       |
-|39 >    echo $b, " is high(int)."                                            |
-|40 >    try:                                                                 |
-|41 >      return b.fn()                                                      |
-|42 >    catch:                                                               |
-|43 >      echo "Something unexpected happened!"                              |
-|44 >      throw # pass on the error                                          |
+|>>>>proc doSomethingWith[U](b: int, fn: int->U): U =                         |
+|>>>>  if b == high(T):                                                       |
+|>>>>    echo $b, " is high(int)."                                            |
+|>>>>    try:                                                                 |
+|>>>>      return b.fn()                                                      |
+|>>>>    catch:                                                               |
+|>>>>      echo "Something unexpected happened!"                              |
+|>>>>      throw # pass on the error                                          |
 |>>>>  else:                                                                  |
 +------------------------- sourceFile: /dev/someFile.nim ---------------------+
 |> 3 + 52 + 99.outputFromPureFunction(): int = 1                              |
