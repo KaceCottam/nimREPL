@@ -133,8 +133,8 @@ when isMainModule:
           except KeyError:
             log.add "Invalid Command! Try ':?'"
         else:
+          if buffer.len != 0: buffer.add "\n"
           buffer.add line
-          buffer.add "\n"
         line = ""
       of Up: discard
       of Down: discard

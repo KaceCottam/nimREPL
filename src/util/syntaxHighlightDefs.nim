@@ -87,6 +87,8 @@ const syntaxHighlight* =
   , "float64"   : fgYellow
   , "range"     : fgYellow
   , "set"       : fgYellow
+  , "seq"       : fgYellow
+  , "array"       : fgYellow
   , "openArray" : fgYellow
   , "varargs"   : fgYellow
   }.toTable
