@@ -1,56 +1,92 @@
 from illwill import ForegroundColor, BackgroundColor
+
+import tables
+## retrieved from https://nim-lang.org/docs/manual.html
+## colorings done according to my nim syntax highlighting setup
 const syntaxHighlight* =
-  # procedure declarations
-  [ ("proc", fgYellow)
-  , ("func", fgYellow)
-  , ("template", fgYellow)
-  , ("macro", fgYellow)
-  , ("type", fgYellow)
-  # data declarations
-  , ("const", fgRed)
-  , ("let", fgRed)
-  , ("var", fgRed)
-  , ("of", fgRed)
-  # scope declarations
-  , ("when", fgCyan)
-  , ("block", fgCyan)
-  , ("do", fgRed)
-  , ("if", fgRed)
-  , ("for", fgRed)
-  , ("while", fgRed)
-  , ("in", fgRed)
-  # base types
-  , ("auto", fgYellow)
-  , ("int", fgYellow)
-  , ("int8", fgYellow)
-  , ("int16", fgYellow)
-  , ("int32", fgYellow)
-  , ("int64", fgYellow)
-  , ("bool", fgYellow)
-  , ("true", fgMagenta)
-  , ("false", fgMagenta)
-  , ("uint", fgYellow)
-  , ("uint8", fgYellow)
-  , ("uint16", fgYellow)
-  , ("uint32", fgYellow)
-  , ("uint64", fgYellow)
-  , ("float", fgYellow)
-  , ("float32", fgYellow)
-  , ("float64", fgYellow)
-  , ("string", fgYellow)
-  , ("char", fgYellow)
-  , ("seq", fgYellow)
-  , ("array", fgYellow)
-  , ("range", fgYellow)
-  , ("void", fgYellow)
-  , ("RootObj", fgYellow)
-  # other
-  , ("echo", fgGreen)
-  , ("assert", fgGreen)
-  , ("and", fgCyan)
-  , ("or", fgCyan)
-  , ("xor", fgCyan)
-  , ("is", fgCyan)
-  , ("discard", fgRed)
-  , ("import", fgCyan)
-  ]
+  { "addr"      : fgRed
+  , "and"       : fgBlue
+  , "as"        : fgCyan
+  , "asm"       : fgRed
+  , "bind"      : fgRed
+  , "block"     : fgCyan
+  , "break"     : fgRed
+  , "case"      : fgRed
+  , "cast"      : fgRed
+  , "concept"   : fgCyan
+  , "const"     : fgRed
+  , "continue"  : fgRed
+  , "converter" : fgYellow
+  , "defer"     : fgRed
+  , "discard"   : fgRed
+  , "distinct"  : fgcyan
+  , "div"       : fgBlue
+  , "do"        : fgRed
+  , "elif"      : fgRed
+  , "else"      : fgRed
+  , "end"       : fgRed
+  , "enum"      : fgCyan
+  , "except"    : fgRed
+  , "export"    : fgCyan
+  , "finally"   : fgRed
+  , "for"       : fgRed
+  , "from"      : fgCyan
+  , "func"      : fgYellow
+  , "if"        : fgRed
+  , "import"    : fgCyan
+  , "in"        : fgRed
+  , "include"   : fgCyan
+  , "interface" : fgCyan
+  , "is"        : fgBlue
+  , "isnot"     : fgBlue
+  , "iterator"  : fgRed
+  , "let"       : fgRed
+  , "macro"     : fgCyan
+  , "method"    : fgYellow
+  , "mixin"     : fgRed
+  , "mod"       : fgBlue
+  , "nil"       : fgRed
+  , "not"       : fgBlue
+  , "notin"     : fgBlue
+  , "object"    : fgCyan
+  , "of"        : fgRed
+  , "or"        : fgBlue
+  , "out"       : fgRed
+  , "proc"      : fgYellow
+  , "ptr"       : fgYellow
+  , "raise"     : fgRed
+  , "ref"       : fgYellow
+  , "return"    : fgRed
+  , "shl"       : fgBlue
+  , "shr"       : fgBlue
+  , "static"    : fgRed
+  , "template"  : fgCyan
+  , "try"       : fgRed
+  , "tuple"     : fgCyan
+  , "type"      : fgRed
+  , "using"     : fgRed
+  , "var"       : fgRed
+  , "when"      : fgCyan
+  , "while"     : fgRed
+  , "xor"       : fgBlue
+  , "yield"     : fgRed
+  , "bool"      : fgYellow
+  , "char"      : fgYellow
+  , "int"       : fgYellow
+  , "int8"      : fgYellow
+  , "int16"     : fgYellow
+  , "int32"     : fgYellow
+  , "int64"     : fgYellow
+  , "uint"      : fgYellow
+  , "uint8"     : fgYellow
+  , "uint16"    : fgYellow
+  , "uint32"    : fgYellow
+  , "uint64"    : fgYellow
+  , "float"     : fgYellow
+  , "float32"   : fgYellow
+  , "float64"   : fgYellow
+  , "range"     : fgYellow
+  , "set"       : fgYellow
+  , "openArray" : fgYellow
+  , "varargs"   : fgYellow
+  }.toTable
