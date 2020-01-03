@@ -14,9 +14,9 @@ buffer, while the other half holds the message and output log.
 |>>>>    echo $b, " is high(int)."                                            |
 |>>>>    try:                                                                 |
 |>>>>      return b.fn()                                                      |
-|>>>>    catch:                                                               |
+|>>>>    except:                                                              |
 |>>>>      echo "Something unexpected happened!"                              |
-|>>>>      throw # pass on the error                                          |
+|>>>>      raise: # pass on the error                                         |
 |>>>>  else:                                                                  |
 +------------------------- sourceFile: /dev/someFile.nim ---------------------+
 |> 3 + 52 + 99.outputFromPureFunction(): int = 1                              |
