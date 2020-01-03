@@ -45,4 +45,6 @@ and primitive types.
 
 The last line of the buffer will be named the "Command Line". It is here that
 you can type commands and simple evaluations. It is shown without a line
-number.
+number. If there is no command and no evaluation, this line is added to the
+end of the buffer upon pressing enter. The commandline can grow for complex
+statements.
