@@ -19,12 +19,12 @@ buffer, while the other half holds the message and output log.
 |44 >      throw # pass on the error                                          |
 |>>>>  else:                                                                  |
 +------------------------- sourceFile: /dev/someFile.nim ---------------------+
+|> 3 + 52 + 99.outputFromPureFunction(): int = 1                              |
 |> hello                                                                      |
 |> hello                                                                      |
 |> hello                                                                      |
 |> b: int = 3                                                                 |
 |> doSomethingWith: proc[U](int, int -> U): U                                 |
-|                                                                             |
 +-----------------------------------------------------------------------------+
 ```
 
@@ -40,5 +40,9 @@ exists. Some commands include:
 + :help, :h, :? -> see commands
 + :load, :l     -> load a source file into the buffer
 
-There is syntax highlighting made based on a reserved keywords list, numbers,
+There is syntax highlighting based on a reserved keywords list, numbers,
 and primitive types.
+
+The last line of the buffer will be named the "Command Line". It is here that
+you can type commands and simple evaluations. It is shown without a line
+number.
