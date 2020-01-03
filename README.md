@@ -48,3 +48,6 @@ you can type commands and simple evaluations. It is shown without a line
 number. If there is no command and no evaluation, this line is added to the
 end of the buffer upon pressing enter. The commandline can grow for complex
 statements.
+
+For now, long lines will be trimmed, and have to be shown by placing the cursor
+to the end of the screen.
